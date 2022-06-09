@@ -21,3 +21,7 @@ class Updatestudent(BaseModel):
     name: Options[str] = None
     age: Optional[int] = None
     year: Optional[str] = None
+
+@app.get("/")
+def index():
+    return {"name": "First data"}
