@@ -1,6 +1,6 @@
 # fastapi-0003
 
-If anyone is having issues setting up Python FASTAPI with Gcloud or Heroku, 
+If anyone is having issues setting up Python FastAPI with Gcloud or Heroku, 
 you may use this as a base-line example, with a registration/login and JWT 
 return token. 
 
