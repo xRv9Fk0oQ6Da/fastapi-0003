@@ -1,3 +1,4 @@
+gunicorn==20.1.0
 anyio==3.6.1
 asgiref==3.5.2
 auth==0.5.3
@@ -16,7 +17,6 @@ eventlet==0.33.1
 falcon==3.1.0
 fastapi==0.78.0
 greenlet==1.1.2
-gunicorn==20.1.0
 h11==0.13.0
 httptools==0.4.0
 idna==3.3
