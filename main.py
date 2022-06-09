@@ -10,6 +10,10 @@ app = FastAPI()
 auth_handler = AuthHandler()
 users = []
 
+@app.get("/")
+    def index():
+        return {'home':'homepage api'}
+
 # /api/register endpoint; requires username and password
 @app.post('/api/register', status_code=201)
 def register(auth_details: AuthDetails):
