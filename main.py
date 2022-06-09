@@ -11,7 +11,7 @@ auth_handler = AuthHandler()
 users = []
 
 @app.get("/")
-    def index():
+    def home():
         return {'home':'homepage api'}
 
 # /api/register endpoint; requires username and password
