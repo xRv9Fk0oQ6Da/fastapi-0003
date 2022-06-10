@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 class AuthHandler():
     security = HTTPBearer()
     pwd_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
-    secret = 'SECRET'
+    secret = 'EF8A4C203134F130D8B21FC434DB477AFA9DE937BDE9B3785AAD9D87FF15F6A71693D8D465BBF4175578746A91707536'
 
     def get_password_hash(self, password):
         return self.pwd_context.hash(password)
@@ -17,7 +17,7 @@ class AuthHandler():
 
     def encode_token(self, user_id):
         payload = {
-            'exp': datetime.utcnow() + timedelta(days=0, minutes=5),
+            'exp': datetime.utcnow() + timedelta(days=1, minutes=0),
             'iat': datetime.utcnow(),
             'sub': user_id
         }
