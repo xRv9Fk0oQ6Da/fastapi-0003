@@ -5,7 +5,7 @@ from functools import cache
 from fastapi import FastAPI, Depends, HTTPException
 from auth import AuthHandler
 from schemas import AuthDetails
-import webbrowser
+import requests
 
 
 # Initialize the API Project
@@ -44,7 +44,7 @@ def register(auth_details: AuthDetails):
         'username': auth_details.username,
         'password': hashed_password
     })
-    
+
     # Insert the registration into the database;
     #
     # mycursor = URLgripper.cursor()
