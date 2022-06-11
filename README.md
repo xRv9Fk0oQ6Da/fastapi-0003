@@ -5,7 +5,7 @@ you may use this as a base-line example, with a registration/login and JWT
 return token. 
 ---
 ### **The Reasons why I was having issues is because:**
-1) Gcloud was a way to complex for a simpel Python API. 
+1) Gcloud was a way to complex for a simple Python API. 
   >They started charging before the API was even established.
 
 2) Heroku hosts apps for free; and won't (or shouldn't) cap the API like Gcloud.
