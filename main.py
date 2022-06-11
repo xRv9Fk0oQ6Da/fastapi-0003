@@ -1,4 +1,5 @@
 # Imports as required;
+from functools import cache
 from fastapi import FastAPI, Depends, HTTPException
 from auth import AuthHandler
 from schemas import AuthDetails
@@ -16,14 +17,11 @@ users = []
 # Creating connection object
 # Default login credentials provided
 URLgripper = mysql.connector.connect(
-  host="127.0.0.1",
+  host="127.0.0.11",
   user="root",
   password="",
-  database="*"
+  database="testdatabase"
 )
-
-if(URLgripper):
-    webbrowser.open('http://127.0.0.1/phpmyadmin')  # Load your Dashboard on Application Launch;
 
 @app.get("/")
 def home():
