@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 class AuthHandler():
     security = HTTPBearer()
     pwd_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
+    # sample test key secret; not meant for production;
     secret = 'EF8A4C203134F130D8B21FC434DB477AFA9DE937BDE9B3785AAD9D87FF15F6A71693D8D465BBF4175578746A91707536'
 
     def get_password_hash(self, password):

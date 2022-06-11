@@ -2,6 +2,7 @@
 from fastapi import FastAPI, Depends, HTTPException
 from auth import AuthHandler
 from schemas import AuthDetails
+import mysql.connector
 
 # Initialize the API Project
 app = FastAPI()
@@ -9,6 +10,16 @@ app = FastAPI()
 # Handle auth and cliented user data
 auth_handler = AuthHandler()
 users = []
+
+# Creating connection object
+# Default login credentials provided
+URLgripper = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    password = ""
+)
+
+print(URLgripper)
 
 @app.get("/")
 def home():
