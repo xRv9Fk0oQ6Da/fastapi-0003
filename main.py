@@ -1,9 +1,10 @@
 # Imports as required;
+#
+# import mysql.connector
 from functools import cache
 from fastapi import FastAPI, Depends, HTTPException
 from auth import AuthHandler
 from schemas import AuthDetails
-import mysql.connector
 import webbrowser
 
 
@@ -16,20 +17,21 @@ users = []
 
 # Creating connection object
 # Default login credentials provided
-URLgripper = mysql.connector.connect(
-  host="127.0.0.11",
-  user="root",
-  password="",
-  database="testdatabase"
-)
+#
+# URLgripper = mysql.connector.connect(
+#   host="127.0.0.11",
+#   user="root",
+#   password="",
+#   database="testdatabase"
+# )
 
 @app.get("/")
 def home():
-    return {'home':'homepage api'}
+    return { 'home': 'homepage api' }
 
 @app.get('/goob')
 def goob():
-    return {'gooby':'gooba-gii goob'}
+    return { 'gooby': 'gooba-gii goob' }
 
 # /api/register endpoint; requires username and password
 @app.post('/api/register', status_code=201)
@@ -42,15 +44,14 @@ def register(auth_details: AuthDetails):
         'username': auth_details.username,
         'password': hashed_password
     })
-
-    mycursor = URLgripper.cursor()
-
-    sql = "INSERT INTO users (username, password) VALUES (%s, %s)"
-    val = (auth_details.username, hashed_password)
-
-    mycursor.execute(sql, val)
-
-    URLgripper.commit()
+    
+    # Insert the registration into the database;
+    #
+    # mycursor = URLgripper.cursor()
+    # sql = "INSERT INTO users (username, password) VALUES (%s, %s)"
+    # val = (auth_details.username, hashed_password)
+    # mycursor.execute(sql, val)
+    # URLgripper.commit()
 
     return { 'token': token }
 
