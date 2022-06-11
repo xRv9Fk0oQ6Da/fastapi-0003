@@ -7,7 +7,6 @@ from auth import AuthHandler
 from schemas import AuthDetails
 import requests
 
-
 # Initialize the API Project
 app = FastAPI()
 
