@@ -3,6 +3,8 @@ from fastapi import FastAPI, Depends, HTTPException
 from auth import AuthHandler
 from schemas import AuthDetails
 import mysql.connector
+import webbrowser
+
 
 # Initialize the API Project
 app = FastAPI()
@@ -14,12 +16,12 @@ users = []
 # Creating connection object
 # Default login credentials provided
 URLgripper = mysql.connector.connect(
-    host = "localhost",
+    host = "127.0.0.1",
     user = "root",
     password = ""
 )
 
-print(URLgripper)
+webbrowser.open('http://localhost/pphpmyadmin')  # Go to example.com
 
 @app.get("/")
 def home():
