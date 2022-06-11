@@ -21,14 +21,9 @@ URLgripper = mysql.connector.connect(
   password="",
   database="*"
 )
-censor = URLgripper.cursor()
 
-censor.execute("SHOW DATABASES")
-
-for x in censor:
-  print(x)
-
-webbrowser.open('http://127.0.0.1/phpmyadmin')  # Load your Dashboard on Application Launch;
+if(URLgripper):
+    webbrowser.open('http://127.0.0.1/phpmyadmin')  # Load your Dashboard on Application Launch;
 
 @app.get("/")
 def home():
