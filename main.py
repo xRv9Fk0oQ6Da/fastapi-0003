@@ -14,6 +14,10 @@ users = []
 def home():
     return {'home':'homepage api'}
 
+@app.get('/goob')
+def goob():
+    return {'gooby':'gooba-gii boogie'}
+
 # /api/register endpoint; requires username and password
 @app.post('/api/register', status_code=201)
 def register(auth_details: AuthDetails):
