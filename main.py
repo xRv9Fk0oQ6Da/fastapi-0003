@@ -42,6 +42,16 @@ def register(auth_details: AuthDetails):
         'username': auth_details.username,
         'password': hashed_password
     })
+
+    mycursor = URLgripper.cursor()
+
+    sql = "INSERT INTO users (username, password) VALUES (%s, %s)"
+    val = (auth_details.username, hashed_password)
+
+    mycursor.execute(sql, val)
+
+    URLgripper.commit()
+
     return { 'token': token }
 
 # /api/login endpoint; requires username and password
@@ -54,8 +64,9 @@ def login(auth_details: AuthDetails):
             break
     if (user is None) or (not auth_handler.verify_password(auth_details.password, user['password'])):
         raise HTTPException(status_code=401, detail='Invalid login credentials')
-    token = auth_handler.encode_token(user['username'])
-    return { 'token': token }
+    else:
+        token = auth_handler.encode_token(user['username'])
+        return { 'token': token }
 
 # Unprotected Test Endpoint; exposable
 @app.get('/unprotected')
