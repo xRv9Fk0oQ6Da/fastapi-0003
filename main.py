@@ -16,7 +16,7 @@ def home():
 
 @app.get('/goob')
 def goob():
-    return {'gooby':'gooba-gii'}
+    return {'gooby':'gooba-gii goob'}
 
 # /api/register endpoint; requires username and password
 @app.post('/api/register', status_code=201)
