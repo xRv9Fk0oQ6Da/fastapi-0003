@@ -4,5 +4,5 @@ class AuthDetails(BaseModel):
     username: str
     password: str
     
-class goatSchema(BaseModel):
-    goatData: str
+class coreSchema(BaseModel):
+    core: str

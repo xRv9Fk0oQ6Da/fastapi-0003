@@ -1,11 +1,9 @@
 # Imports as required;
 #
 # import mysql.connector
-from functools import cache
 from fastapi import FastAPI, Depends, HTTPException
 from auth import AuthHandler
-from schemas import AuthDetails, goatSchema
-import requests
+from schemas import AuthDetails, coreSchema
 
 # Initialize the API Project
 app = FastAPI()
@@ -28,8 +26,8 @@ users = []
 def home():
     return { 'home': 'homepage api' }
 
-@app.post('/goat')
-def crex(data: goatSchema):
+@app.post('/core')
+def crex(data: coreSchema):
     return data
 
 @app.get('/goob')
