@@ -4,7 +4,7 @@
 from functools import cache
 from fastapi import FastAPI, Depends, HTTPException
 from auth import AuthHandler
-from schemas import AuthDetails
+from schemas import AuthDetails, goatSchema
 import requests
 
 # Initialize the API Project
@@ -27,6 +27,10 @@ users = []
 @app.get("/")
 def home():
     return { 'home': 'homepage api' }
+
+@app.post('/goat')
+def crex(data: goatSchema):
+    return data
 
 @app.get('/goob')
 def goob():
