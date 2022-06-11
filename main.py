@@ -16,12 +16,19 @@ users = []
 # Creating connection object
 # Default login credentials provided
 URLgripper = mysql.connector.connect(
-    host = "127.0.0.1",
-    user = "root",
-    password = ""
+  host="127.0.0.1",
+  user="root",
+  password="",
+  database="*"
 )
+censor = URLgripper.cursor()
 
-webbrowser.open('http://localhost/pphpmyadmin')  # Go to example.com
+censor.execute("SHOW DATABASES")
+
+for x in censor:
+  print(x)
+
+webbrowser.open('http://127.0.0.1/phpmyadmin')  # Load your Dashboard on Application Launch;
 
 @app.get("/")
 def home():
