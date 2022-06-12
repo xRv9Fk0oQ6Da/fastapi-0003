@@ -79,3 +79,12 @@ def unprotected():
 @app.get('/protected')
 def protected(username=Depends(auth_handler.auth_wrapper)):
     return { 'name': username }
+    
+# Protected Test Endpoint; non-exposable; Bearer Token required
+@app.post('/post')
+def protected(username=Depends(auth_handler.auth_wrapper)):
+    a = [1, 2, 3], [4, 5], [6, 7, 8]
+    for i in range(len(a)):
+        for j in range(len(a[i])):
+            print(a[i][j], end=' ')
+        return(a)
