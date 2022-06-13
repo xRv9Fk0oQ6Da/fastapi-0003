@@ -73,7 +73,7 @@ def login(auth_details: AuthDetails):
 # Unprotected Test Endpoint; exposable
 @app.get('/unprotected')
 def unprotected():
-    return { 'hello': 'world' }
+    return { 'hello': 'world!' }
 
 # Protected Test Endpoint; non-exposable; Bearer Token required
 @app.get('/protected')
