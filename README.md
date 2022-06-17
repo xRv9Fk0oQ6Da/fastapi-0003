@@ -13,7 +13,7 @@ return token.
 
 3) When setting up the API I had to link a Github Repo (create one) 
    to the Heroku app (create a new one) __~~then~~__ 
-  >save, commit and push your edits to your Git Repo.
+  >Save, commit and push your edits to your Git Repo.
 
 4) Conflicting plugins; JWT and PyJWT can not both exist at the same time; use PyJWT
   >That way you can get Tokens
