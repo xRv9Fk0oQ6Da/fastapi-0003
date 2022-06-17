@@ -11,8 +11,8 @@ return token.
 2) Heroku hosts apps for free; and won't (or shouldn't) cap the API like Gcloud.
   >Longer life-cycle acceptance for hobbiests. 
 
-3) When setting up the API I had to link a Github Repo (create one) to the 
-   Heroku app (create a new one) then 
+3) When setting up the API I had to link a Github Repo (create one) 
+4) to the Heroku app (create a new one) __~~then~~__ 
   >save, commit and push your edits to your Git Repo.
 
 4) Conflicting plugins; JWT and PyJWT can not both exist at the same time; use PyJWT
