@@ -35,7 +35,7 @@ def goob():
     return { 'gooby': 'gooba-gii goob' }
 
 # /api/register endpoint; requires username and password
-@app.post('/api/register', status_code=201)
+@app.post('/register', status_code=201)
 def register(auth_details: AuthDetails):
     if any(x['username'] == auth_details.username for x in users):
         raise HTTPException(status_code=400, detail='Username is taken')
@@ -57,7 +57,7 @@ def register(auth_details: AuthDetails):
     return { 'token': token }
 
 # /api/login endpoint; requires username and password
-@app.post('/api/login')
+@app.post('/login')
 def login(auth_details: AuthDetails):
     user = None
     for x in users:
