@@ -12,7 +12,7 @@ return token.
   >Longer life-cycle acceptance for hobbiests. 
 
 3) When setting up the API I had to link a Github Repo (create one) 
-4) to the Heroku app (create a new one) __~~then~~__ 
+   to the Heroku app (create a new one) __~~then~~__ 
   >save, commit and push your edits to your Git Repo.
 
 4) Conflicting plugins; JWT and PyJWT can not both exist at the same time; use PyJWT
